@@ -1,0 +1,48 @@
+/*WAP for Herarical inheritance*/
+class Student
+{
+    public void getStudent()
+    {
+        System.out.println("This is student of our class");
+    }
+}
+
+class Subject extends Student 
+{
+    public void getSubject()
+    {
+        System.out.println("There are many Subject ");
+    }
+}
+
+class Maths extends Student 
+{
+    public void getMaths()
+    {
+        System.out.println("you chooswd maths: ");
+    }
+}
+
+class Science extends Student 
+{
+    public void getScience()
+    {
+        System.out.println("You choosed science:");
+    }
+}
+
+public class Program
+{
+    public static void main(String[] args) {
+        Student  s = new Student();  
+Subject  sc = new Subject();  
+Maths ms  = new Maths();  
+Science sn = new Science ();
+//all the sub classes can access the method of super class  
+s.getStudent();  
+sc.getSubject ();  
+ms.getMaths ();  
+sn.getScience ();
+
+    }
+}
