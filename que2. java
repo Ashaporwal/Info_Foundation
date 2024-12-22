@@ -1,0 +1,36 @@
+/*program for strongest number*/
+
+public class Program
+{
+    public static void main(String[] args) {
+        int n=123;//153
+        int r;
+        int temp = n;
+       int sum = 0;
+       int f=1;
+        while(n!=0)
+        {
+            r=n%10;
+            
+            for(int i=1; i<=n; i++)
+            {
+                
+                f = f*n;
+                n--;
+            }
+            sum = sum +f;
+           n = n/10;
+           }
+          if(sum == temp)
+          {
+              System.out.println("num is Strongest");
+              }
+              else
+              {
+                  System.out.println("num is not Strongest");
+              }
+          
+            //System.out.println("")
+        }
+    
+}
