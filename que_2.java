@@ -1,4 +1,4 @@
-/*WAP to pass entire array to a method count of even and odd*/
+/*WAP to pass entire array to a method and display it*/
 
 public class Program
 {
