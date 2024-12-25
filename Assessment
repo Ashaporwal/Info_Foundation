@@ -1,1 +1,85 @@
-Assessment of 23rd December and 24th December
+/*Assessment of 23rd December and 24th December*/
+
+/*Description: Create a class LibraryItem with attributes title, author, and yearPublished.
+
+Create subclasses Book, Magazine, and DVD.
+Add unique features (e.g., genre for Book, volume for Magazine, and runtime for DVD).
+Add a method displayDetails() to show specific details for each subclass.
+*/
+
+class LibraryItem
+{
+private String title;
+private String author;
+private int yearPublished;
+
+public LibraryItem(String title,String author,int yearPublished )
+{
+    this.title = title;
+    this.author = author;
+    this.yearPublished = yearPublished ;
+}
+void displayDetails ()
+{
+    System.out.println("Title of the book is:"+ title);
+    System.out.println("Author of the book is:"+author);
+    System.out.println("The book is Published in the year of:"+yearPublished);
+}
+}
+class Book extends LibraryItem {
+    private String genre;
+    
+    public Book(String title,String author,int yearPublished ,String genere)
+    {
+        super(title,author,yearPublished );
+        this.genre  = genre;
+    }
+    public void displayDetails()
+    {
+        super.displayDetails();
+    System.out.println("Genre " +genre);
+    }
+}
+class Magazine extends LibraryItem {
+    private String volume;
+    
+    public Magazine(String title,String author ,int yearPublished ,String volume )
+    {
+      super(title,author,yearPublished );
+      this.volume = volume;
+    }
+    
+    public void displayDetails()
+    {
+        super.displayDetails();
+    System.out.println("Volume " +volume);
+    }
+}
+class Dvd extends LibraryItem 
+{
+   private  int runtime;
+   public Dvd(String title,String author,int yearPublished ,int runtime )
+   {
+       super(title,author,yearPublished );
+      this.runtime  = runtime ;
+   }
+   public void displayDetails()
+    {
+        super.displayDetails();
+    System.out.println("Runtime:" +runtime);
+    }
+   
+}
+public class Program
+{
+    public static void main(String[] args) {
+        Book book = new Book("IKIGAI", "Hector Garcia", 2016, "self-help book");
+        Magazine magazine = new Magazine("National Geographic", "Various", 2023, "Volume 42");
+        Dvd dvd = new Dvd("Inception", "Christopher Nolan", 2010, 148);
+        book.displayDetails();
+        System.out.println("---");
+        magazine.displayDetails();
+        System.out.println("---");
+        dvd.displayDetails();
+    }
+}
