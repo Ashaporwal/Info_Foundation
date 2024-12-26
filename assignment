@@ -1,0 +1,35 @@
+Assignment 1: Shape Area Calculation
+Create a parent class Shape with a method calculateArea() that prints "Area calculation not defined for Shape."
+Create subclasses:
+Circle that overrides calculateArea() to calculate and print the area of a circle.
+Rectangle that overrides calculateArea() to calculate and print the area of a rectangle.
+Write a Main class to demonstrate polymorphism using an array of Shape objects.
+
+2.
+Create a parent class Animal with a method makeSound() that prints "Some generic sound."
+Create subclasses:
+Dog that overrides makeSound() to print "Woof Woof."
+Cat that overrides makeSound() to print "Meow Meow."
+In the Main class, use polymorphism to call makeSound() on different Animal objects.
+
+Assignment 3.
+Create a parent class Bank with a method getInterestRate() that returns 0.
+Create subclasses:
+SBI that overrides getInterestRate() to return 5.
+ICICI that overrides getInterestRate() to return 6.
+Axis that overrides getInterestRate() to return 7.
+In the Main class, demonstrate method overriding by calling getInterestRate() on different bank objects.
+
+Assignment 4:
+Create a parent class Vehicle with a method speed() that prints "Speed varies for different vehicles."
+Create subclasses:
+Car that overrides speed() to print "The car speed is 120 km/h."
+Bike that overrides speed() to print "The bike speed is 80 km/h."
+Use polymorphism to display the speed of different vehicles in the Main class.
+
+Assignment 5:
+Create a parent class Employee with a method calculateSalary() that prints "Base salary calculation for Employee."
+Create subclasses:
+Manager that overrides calculateSalary() to add a bonus to the base salary.
+Developer that overrides calculateSalary() to calculate salary based on hours worked.
+Demonstrate the overridden method in the Main class by creating an array of Employee objects and calling calculateSalary() on each.
