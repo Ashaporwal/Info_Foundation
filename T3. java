@@ -1,0 +1,57 @@
+
+/*Assignment 3.
+Create a parent class Bank with a method getInterestRate() that returns 0.
+Create subclasses:
+SBI that overrides getInterestRate() to return 5.
+ICICI that overrides getInterestRate() to return 6.
+Axis that overrides getInterestRate() to return 7.
+In the Main class, demonstrate method overriding by calling getInterestRate() on different bank objects.
+*/
+class Bank
+{
+    int getInterestRate()
+    {
+        return 0;
+    }
+}
+
+class Sbi extends Bank
+{
+    int getInterestRate()
+    {
+        return 5;
+    }
+}
+
+class Icici extends Bank
+{
+    int getInterestRate()
+    {
+        return 6;
+    }
+}
+
+class Axis extends Bank
+{
+    int getInterestRate()
+    {
+        return 7;
+    }
+}
+public class Program
+{
+    public static void main(String[] args) {
+        Sbi obj1 = new Sbi();
+      int s =  obj1.getInterestRate();
+        
+        Icici obj2 = new Icici();
+       int i = obj2.getInterestRate ();
+        
+        Axis obj3 = new Axis();
+        int a=  obj3.getInterestRate();
+       
+       System.out.println("The Sbi interest is:" + s);
+       System.out.println("The Icici intreset is:" +i);
+       System.out.println("the Axis intreset is:" +a);
+    }
+}
