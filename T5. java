@@ -1,0 +1,74 @@
+
+/*
+Assignment 5:
+Create a parent class Employee with a method calculateSalary() that prints "Base salary calculation for Employee."
+Create subclasses:
+Manager that overrides calculateSalary() to add a bonus to the base salary.
+Developer that overrides calculateSalary() to calculate salary based on hours worked.
+Demonstrate the overridden method in the Main class by creating an array of Employee objects and calling calculateSalary() on each.
+*/
+class Employee
+{
+    public void calculateSalary()
+    {
+        System.out.println("Base salary calculation for Employee.");
+    }
+}
+
+class Manager extends Employee
+{
+    private double basesalary;
+    private double bonus;
+    
+    public void Manager(double basesalary ,double bonus)
+    {
+        this.basesalary=basesalary;
+        this.bonus=bonus;
+    }
+    public void calculateSalary()
+    {
+      double totalsalary=basesalary + bonus;
+        System.out.println("Base salary + bonus is:" +totalsalary );
+    }
+}
+
+class Developer extends Employee 
+{
+    private double hoursrate;
+    private double hoursworked;
+    
+    public void Developer (double hoursrate,double hoursworked)
+    {
+        this.hoursrate=hoursrate;
+        this.hoursworked=hoursworked;
+    }
+    public void calculateSalary()
+    {
+      double basedhour =  hoursrate *hoursworked;
+        System.out.println(" developers total salary is" + basedhour);
+    }
+}
+
+
+
+
+public class Program
+{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner (System.in);
+        
+        System.out.println("Enter the badic  salary:");
+        double basesalary = sc.nextDouble();
+        
+        System.out.println("Enter the bonus:");
+        double bonus = sc.nextDouble();
+        
+        System.out.println("Enter thr working hours:");
+        double hoursworked = sc.nextDouble ();
+    }
+    
+    Employee manager  = new Manager(basesalary , bonus);
+        Employee developer = new Developer(hoursworked ,hoursrate );
+
+    
+}
