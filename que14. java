@@ -1,0 +1,66 @@
+import java.util.Scanner;
+
+class Pizza {
+    protected double basePrice;
+    protected double toppingCost;
+    protected int numToppings;
+
+    public Pizza(double basePrice, double toppingCost, int numToppings) {
+        this.basePrice = basePrice;
+        this.toppingCost = toppingCost;
+        this.numToppings = numToppings;
+    }
+
+    public double calculatePrice() {
+        return basePrice + (toppingCost * numToppings);
+    }
+
+    public void displayPrice() {
+        System.out.printf("Price without discount: Rs.%.2f%n", calculatePrice());
+    }
+}
+
+class DiscountedPizza extends Pizza {
+
+    public DiscountedPizza(double basePrice, double toppingCost, int numToppings) {
+        super(basePrice, toppingCost, numToppings);
+    }
+
+    @Override
+    public void displayPrice() {
+        double regularPrice = calculatePrice();
+        double discountedPrice = (numToppings > 3) ? regularPrice * 0.9 : regularPrice;
+        System.out.printf("Price with discount: Rs.%.2f%n", discountedPrice);
+    }
+}
+
+public class Program {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        // Input base price
+        System.out.println("Enter the base price:");
+        double basePrice = sc.nextDouble();
+
+        // Input topping cost
+        System.out.println("Enter the topping cost:");
+        double toppingCost = sc.nextDouble();
+
+        // Input number of toppings
+        System.out.println("Enter the number of toppings:");
+        int numToppings = sc.nextInt();
+
+        if (basePrice <= 0 || toppingCost <= 0 || numToppings < 1 || numToppings > 10) {
+            System.out.println("Invalid input values.");
+            return;
+        }
+
+        // Create objects
+        Pizza regularPizza = new Pizza(basePrice, toppingCost, numToppings);
+        DiscountedPizza discountedPizza = new DiscountedPizza(basePrice, toppingCost, numToppings);
+
+        // Display prices
+        regularPizza.displayPrice();
+        discountedPizza.displayPrice();
+    }
+}
