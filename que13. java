@@ -1,0 +1,90 @@
+/*
+3.
+
+ Online Learning Platform:
+You are tasked with modeling a course management system.
+
+Abstract Class:
+
+Create an abstract class Course with the following:
+Fields:
+String courseName
+int duration (in weeks)
+Constructor to initialize fields.
+Abstract method showContent().
+Concrete method displayDetails() to print the course name and duration.
+Subclasses:
+
+Create the following subclasses:
+ProgrammingCourse:
+Additional field: String language.
+Override showContent() to print "This course covers programming in [language]."
+DesignCourse:
+Additional field: String tool.
+Override showContent() to print "This course focuses on design using [tool]."
+Main Class:
+
+Create objects of ProgrammingCourse and DesignCourse.
+Call showContent() and displayDetails() for each course.
+
+*/
+
+abstract class Course
+{
+    String courseName;
+   int duration;
+
+   Course(String courseName ,int duration)
+   {
+       this.courseName= courseName;
+       this.duration = duration;
+   }
+   abstract void showContent();
+   void  displayDetails()
+   {
+       System.out.println("The course name is:"+courseName);
+       System.out.println("The duration is :"+duration);
+       
+   }
+}
+
+class ProgrammingCourse extends Course 
+{
+    String language;
+    ProgrammingCourse (String courseName ,int duration,String language )
+    {
+        super(courseName ,duration);
+        this.language =language;
+    }
+    void showContent ()
+    {
+        System.out.println("This course covers programming in " +language);
+    }
+}
+
+class DesignCourse extends Course 
+{
+     String tool;
+     DesignCourse (String courseName ,int duration,String tool)
+     {
+         super(courseName ,duration);
+         this.tool = tool;
+     }
+    void  showContent ()
+     {
+         System.out.println("This course focuses on design using ." +tool);
+     }
+}
+public class Program
+{
+    public static void main(String[] args) {
+        /*  Create objects of ProgrammingCourse and DesignCourse.
+Call showContent() and displayDetails() for each course.*/
+       ProgrammingCourse p = new ProgrammingCourse("java",7,"programming");
+        p.showContent();
+        p.displayDetails();
+       DesignCourse d = new DesignCourse("java",7,"programming");
+        d.showContent();
+        d.displayDetails();
+    }
+}
