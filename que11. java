@@ -31,20 +31,79 @@ Call checkout(), returnItem(), and displayInfo() for each item.
 */
 abstract class LibraryItem
 {
- String title;
-String author
+private  String title;
+private String  author;
 
 LibraryItem (String title,String author)
 {
     this.title =title;
     this.author =author;
 }
-abstract checkout();
+abstract void checkout();
+abstract void returnItem();
+void displayInfo()
+{
+    System.out.println("The title of the book is:"+title);
+    System.out.println("The author of the book is:"+author);
+}
+}
+class Book extends LibraryItem 
+{
+    int pages;
+    Book(int pages,String title,String author )
+    {
+    super(title,author);
+      this.pages= pages;
+       // System.out.println();
+    }
+    void checkout()
+    {
+        System.out.println("Checking out book:." );
+        }
+    void returnItem()
+    {
+        System.out.println( "Returning book: " );
+    }
+    
+    
 }
 
+class DVD extends LibraryItem
+{
+     int duration;
+     DVD(int duration,String title,String author)
+     {
+     super(title,author);
+         this.duration =duration;
+     }
+     
+     void checkout ()
+     {
+         System.out.println("Checking out DVD: ");
+         
+         
+     }
+     void returnItem()
+    {
+        System.out.println( "Returning book: " );
+    }
+     
+     
+}
 public class Program
 {
     public static void main(String[] args) {
-        
+       /* Create objects of Book and DVD.
+Call checkout(), returnItem(), and displayInfo() for each item.*/
+    Book b = new Book( 101,"ikigai","Asha");
+    b.checkout();
+  b.returnItem();
+  b.displayInfo();
+    
+    DVD d = new DVD(101,"wins of fire","hins");
+    d.checkout();
+    d.returnItem ();
+    d.displayInfo ();
+
     }
 }
