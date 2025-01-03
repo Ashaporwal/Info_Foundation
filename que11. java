@@ -1,0 +1,50 @@
+/*4.
+ Library Management System
+You are designing a library system to manage books and media.
+
+Abstract Class:
+
+Create an abstract class LibraryItem with the following:
+Fields:
+String title
+String author
+Constructor to initialize fields.
+Abstract method checkout().
+Abstract method returnItem().
+Concrete method displayInfo() to print the title and author.
+Subclasses:
+
+Create the following subclasses:
+Book:
+Additional field: int pages.
+Override checkout() to print "Checking out book: [title]."
+Override returnItem() to print "Returning book: [title]."
+DVD:
+Additional field: int duration (in minutes).
+Override checkout() to print "Checking out DVD: [title]."
+Override returnItem() to print "Returning DVD: [title]."
+Main Class:
+
+Create objects of Book and DVD.
+Call checkout(), returnItem(), and displayInfo() for each item.
+
+*/
+abstract class LibraryItem
+{
+ String title;
+String author
+
+LibraryItem (String title,String author)
+{
+    this.title =title;
+    this.author =author;
+}
+abstract checkout();
+}
+
+public class Program
+{
+    public static void main(String[] args) {
+        
+    }
+}
